@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Cart from "./Cart";
 import { HomePage } from "./HomePage";
+import { LoginPage } from "./LoginPage";
 import Product from "./Product";
 import Shopping from "./Shopping";
 
@@ -13,6 +14,7 @@ const MainRoute = () => {
         <Route path="/Shopping" element={<Shopping />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/Cart" element={<Cart />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </div>
   );
