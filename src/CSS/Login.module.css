@@ -1,0 +1,14 @@
+h1 {
+  height: 40px;
+  background-color: #e6f5ff;
+  color: #3477aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+image {
+  width: "10px";
+}
