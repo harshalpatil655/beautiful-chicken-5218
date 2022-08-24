@@ -1,0 +1,11 @@
+.flexbox1 {
+  height: 500px;
+  color: black;
+  border: 1px solid red;
+}
+.flexbox2 {
+  height: 700px;
+  border: 1px solid blue;
+  background-color: wheat;
+  color: black;
+}
