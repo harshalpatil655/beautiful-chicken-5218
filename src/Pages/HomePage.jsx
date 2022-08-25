@@ -2,7 +2,6 @@ import React from "react";
 import styles from "../CSS/HomePage.module.css";
 import { BsFillSunFill } from "react-icons/bs";
 import { Box,Heading,HStack,Stack,Text,Flex,Button} from "@chakra-ui/react";
-import LargeWithNewsletter from "../Components/Footer";
 
 export const HomePage = () => {
   return (
@@ -160,7 +159,6 @@ export const HomePage = () => {
             </Box>
           </Flex>
       </Box>
-      <LargeWithNewsletter />
     </div>
   );
 };
