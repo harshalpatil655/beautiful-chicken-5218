@@ -8,8 +8,8 @@ import TopOffers from "./Pages/TopOffers";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <TopOffers/>
+       <Navbar />
+      <MainRoute />
  
     </div>
   );
