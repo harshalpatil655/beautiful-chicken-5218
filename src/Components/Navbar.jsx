@@ -1,16 +1,13 @@
 import {
   Box,
   InputGroup,
-  InputRightElement,
   Flex,
   Input,
   Image,
   Avatar,
   Tabs,
   TabList,
-  TabPanels,
   Tab,
-  TabPanel,
 } from "@chakra-ui/react";
 // import { Search2Icon } from "@chakra-ui/icons";
 

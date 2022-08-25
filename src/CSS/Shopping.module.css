@@ -12,6 +12,7 @@
 .griddiv {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .productgrid {
   display: flex;
