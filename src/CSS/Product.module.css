@@ -1,0 +1,51 @@
+.lightblue {
+  height: 50px;
+  color: rgb(0, 98, 255);
+  background-color: rgb(157, 207, 224);
+  font-size: 25px;
+}
+.lightblue > p {
+  padding-top: 10px;
+}
+.flexdiv {
+  display: flex;
+}
+.imgdiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 48%;
+  margin: auto;
+}
+
+.sidediv {
+  width: 48%;
+  margin: auto;
+}
+
+.prodimg {
+  height: 400px;
+  width: 250px;
+  margin-left: 150px;
+}
+.customersviewed {
+  border-top: 1px solid black;
+  margin: 2rem;
+  display: flex;
+}
+.customersviewed > div {
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 100px;
+}
+
+.imgcustom {
+  height: 400px;
+  width: 200px;
+}
+.custombtn {
+  height: 35px;
+  background-color: rgb(51, 51, 51);
+  width: 150px;
+  color: white;
+}

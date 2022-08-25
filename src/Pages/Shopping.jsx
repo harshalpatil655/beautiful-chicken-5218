@@ -1,7 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import styles from "../CSS/Shopping.module.css";
 import { getProductsData } from "../Redux/AppReducer/action";
 
@@ -19,7 +19,10 @@ const Shopping = () => {
 
   useEffect(() => {
     if (category || sortBy) {
-      setSearchParams({ category: category, sortBy: sortBy });
+      const params = {};
+      category && (params.category = category);
+      sortBy && (params.sortBy = sortBy);
+      setSearchParams(params);
     }
   }, [category, setSearchParams, sortBy]);
 
@@ -121,22 +124,26 @@ const Shopping = () => {
             products.map((item) => {
               return (
                 <div className={styles.griddiv} key={item.id}>
-                  <div className={styles.productgrid}>
-                    <img
-                      className={styles.shoppingimg}
-                      src={item.image}
-                      alt={item.name}
-                    />
-                    <h1>{item.name}</h1>
-                    <p style={{ color: "gray" }}>{item.title}</p>
-                    <p>{item.category}</p>
-                    <h2>{item.price}</h2>
-                    <p style={{ color: "red" }}>
-                      Mix & Match Full-Size:Buy 3,Get 3 Free or Buy 2, Get 1
-                      Free
-                    </p>
-                    <button className={styles.shoppingbtn}>Add to Cart</button>
-                  </div>
+                  <Link to={`/shopping/${item.id}`}>
+                    <div className={styles.productgrid}>
+                      <img
+                        className={styles.shoppingimg}
+                        src={item.image}
+                        alt={item.name}
+                      />
+                      <h1>{item.name}</h1>
+                      <p style={{ color: "gray" }}>{item.title}</p>
+                      <p>{item.category}</p>
+                      <h2>{item.price}</h2>
+                      <p style={{ color: "red" }}>
+                        Mix & Match Full-Size:Buy 3,Get 3 Free or Buy 2, Get 1
+                        Free
+                      </p>
+                      <button className={styles.shoppingbtn}>
+                        Add to Cart
+                      </button>
+                    </div>
+                  </Link>
                 </div>
               );
             })}
