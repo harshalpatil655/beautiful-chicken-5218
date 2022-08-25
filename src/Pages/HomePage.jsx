@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../CSS/HomePage.module.css";
 import { BsFillSunFill } from "react-icons/bs";
 import { Box,Heading,HStack,Stack,Text,Flex,Button} from "@chakra-ui/react";
+import LargeWithNewsletter from "../Components/Footer";
 
 export const HomePage = () => {
   return (
@@ -154,11 +155,12 @@ export const HomePage = () => {
               <Text fontSize={"sm"}><b><u>Join the VIPs</u></b></Text>  
             </Box>
             <Box color="black" width={"15%"} height="150px">
-              <img src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw41a3328c/images/Spring2022/xcat_mwts-email_sp2_vn.jpg?yocs=o_s_" alt="" height={"200px"} width="200px"/>
+              <img src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4gtb.216/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw41a3328c/images/Spring2022/xcat_mwts-email_sp2_vn.jpg?yocs=o_s_" alt="" height={"200px"} width="200px"/>
               <Text fontSize={"xs"}><b><u>Sign up for emails</u></b></Text>    
             </Box>
           </Flex>
       </Box>
+      <LargeWithNewsletter />
     </div>
   );
 };

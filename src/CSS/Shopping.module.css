@@ -1,0 +1,41 @@
+.flexbox1 {
+  color: black;
+}
+.flexbox2 {
+  color: black;
+}
+.shoppingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+}
+.griddiv {
+  display: flex;
+  justify-content: center;
+}
+.productgrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shoppingimg {
+  width: 150px;
+  height: 250px;
+  margin: auto;
+}
+.shoppingbtn {
+  background-color: rgb(51, 51, 51);
+  color: white;
+  height: 35px;
+}
+.sortfilter {
+  font-size: 30px;
+  font-weight: 700;
+}
+.labelall {
+  margin-top: 20px;
+}
+.labelall > input {
+  margin-right: 5px;
+}
