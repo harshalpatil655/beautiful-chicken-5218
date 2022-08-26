@@ -8,10 +8,25 @@ import {
   Tabs,
   TabList,
   Tab,
+  Text,
 } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
+import {BsFillCartFill} from "react-icons/bs"
+import { Link } from "react-router-dom";
+import { useState } from "react";
 // import { Search2Icon } from "@chakra-ui/icons";
 
 export const Navbar = () => {
+  const getdata = useSelector((state)=> state.cartreducer.carts);
+
+  // console.log(data);
+
+
+  const dispatch = useDispatch();
+
+
+  
+
   return (
     <>
       <Box marginTop={"10px"}>
@@ -37,8 +52,16 @@ export const Navbar = () => {
             marginLeft={"10px"}
             marginTop="-5px"
           />
+          
 
-          <Image
+<Flex alignItems="center" gap="2">
+ 
+               
+              
+               <Link to="/cart">
+                  
+                {getdata.length>0 &&  <div>{getdata.length}</div>}
+                <Image
             cursor={"pointer"}
             marginLeft={"20px"}
             marginTop="-7px"
@@ -46,6 +69,9 @@ export const Navbar = () => {
             width="45px"
             src="https://image.shutterstock.com/image-vector/shopping-cart-icon-bag-260nw-1520865410.jpg"
           ></Image>
+          
+          </Link>
+              </Flex> 
         </Flex>
       </Box>
       <Box marginTop={"20px"}>

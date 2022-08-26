@@ -3,14 +3,17 @@
     {
       "id": 1,
       "name": "Poppy",
+      "qnty":"0",
       "price": 12.4,
       "title": "fine fragrance mist",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw25752e22/crop/026480505_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
       "category": "fragrance"
+      
     },
     {
       "id": 2,
       "name": "Midnight Amber Glow",
+      "qnty":"0",
       "price": 17,
       "title": "fine fragrance mist",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwb859bf7f/crop/026490235_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -19,6 +22,7 @@
     {
       "id": 3,
       "name": "Sweater Weather",
+      "qnty":"0",
       "price": 13,
       "title": "Shower Gel",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw279c6757/crop/026494139_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -27,6 +31,7 @@
     {
       "id": 4,
       "name": "Coffee & Whisky",
+      "qnty":"0",
       "price": 11,
       "title": "Body Spray",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw3ef2d6ce/crop/026495990_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -35,6 +40,7 @@
     {
       "id": 5,
       "name": "Pink Suede",
+      "qnty":"0",
       "price": 16,
       "title": "Ultimate Hydration Body Cream",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw54179ac4/crop/026494129_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -43,6 +49,7 @@
     {
       "id": 6,
       "name": "Ivory Cashmere",
+      "qnty":"0",
       "price": 15,
       "title": "Shower Gel",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8e559fb4/crop/026494140_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -51,6 +58,7 @@
     {
       "id": 7,
       "name": "Midnight Amber Glow",
+      "qnty":"0",
       "price": 19,
       "title": "Daily Nourishing Body",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwe926b9b9/crop/026490239_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -59,6 +67,7 @@
     {
       "id": 8,
       "name": "Crisp Morning Air",
+      "qnty":"0",
       "price": 20,
       "title": "shower gel",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw8e20be00/crop/026501151_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -67,6 +76,7 @@
     {
       "id": 9,
       "name": "Cedarwood Ylang",
+      "qnty":"0",
       "price": 10,
       "title": "Essential oil mist",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw384509fa/crop/026402407_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -75,6 +85,7 @@
     {
       "id": 10,
       "name": "Enchanted Candy Potion",
+      "qnty":"0",
       "price": 21,
       "title": "Ultimate Hydration Body Cream",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw22c9610c/crop/026494225_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -83,6 +94,7 @@
     {
       "id": 11,
       "name": "Mineral & Sea Salt",
+      "qnty":"0",
       "price": 15,
       "title": "Body Spray",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwae70344e/crop/026495993_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -91,6 +103,7 @@
     {
       "id": 12,
       "name": "Lavender Sandalwood",
+      "qnty":"0",
       "price": 13,
       "title": "moisturizing body lotion",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw0c1cfb7c/crop/026402394_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -99,6 +112,7 @@
     {
       "id": 13,
       "name": "Eucalyptus Sage",
+      "qnty":"0",
       "price": 12,
       "title": "body and massage oil",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw0a6b9862/crop/026402402_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -107,6 +121,7 @@
     {
       "id": 14,
       "name": "Eucalyptus Sage",
+      "qnty":"0",
       "price": 15,
       "title": "body massage oil",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw32e173be/crop/026402419_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -115,6 +130,7 @@
     {
       "id": 16,
       "name": "Japanese Cherry Blossom",
+      "qnty":"0",
       "price": 120,
       "title": "daily nourishing body lotion",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw619ff485/crop/026480509_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -123,6 +139,7 @@
     {
       "id": 16,
       "name": "Fairytale",
+      "qnty":"0",
       "price": 18,
       "title": "Ultimate Hydration Body Cream",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwa3f0fa4b/crop/026449922_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -131,6 +148,7 @@
     {
       "id": 17,
       "name": "Worm Vanilla Sugar",
+      "qnty":"0",
       "price": 23,
       "title": "Ultimate Hydration Body Cream",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw27e2f2f7/crop/026533848_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -139,6 +157,7 @@
     {
       "id": 18,
       "name": "Moonlight Path",
+      "qnty":"0",
       "price": 14,
       "title": "Super smooth body lotion",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwd55f9605/crop/026360580_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -147,6 +166,7 @@
     {
       "id": 19,
       "name": "Enchanted Candy Potion",
+      "qnty":"0",
       "price": 18,
       "title": "Ultimate Hydration Body Cream",
       "image": "",
@@ -155,6 +175,7 @@
     {
       "id": 20,
       "name": "Coffee & Whisky",
+      "qnty":"0",
       "price": 16,
       "title": "shea butter cleasing bar",
       "image": "",
@@ -163,6 +184,7 @@
     {
       "id": 21,
       "name": "Noir",
+      "qnty":"0",
       "price": 14,
       "title": "3 in one hair,face & body wash",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dwce73973f/crop/026311425_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -171,6 +193,7 @@
     {
       "id": 22,
       "name": "Bourbon",
+      "qnty":"0",
       "price": 12,
       "title": "3 in one hair,face & body wash",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw2dc11402/crop/026291952_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -179,6 +202,7 @@
     {
       "id": 23,
       "name": "Autumn Drive",
+      "qnty":"0",
       "price": 22,
       "title": "fine fragrance mist",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw265c39be/crop/026495826_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -187,6 +211,7 @@
     {
       "id": 24,
       "name": "Twilight Woods",
+      "qnty":"0",
       "price": 11,
       "title": "fine fragrance mist",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw2b7eaa43/crop/026499760_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -195,6 +220,7 @@
     {
       "id": 25,
       "name": "Sweet Pea",
+      "qnty":"0",
       "price": 35,
       "title": "fine fragrance mist",
       "image": "https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/dw/image/v2/BBDL_PRD/on/demandware.static/-/Sites-master-catalog/default/dw1ca91477/crop/026434253_crop.jpg?sw=500&sh=600&sm=fit&q=75&yocs=o_s_",
@@ -202,3 +228,6 @@
     }
   ]
 }
+
+
+

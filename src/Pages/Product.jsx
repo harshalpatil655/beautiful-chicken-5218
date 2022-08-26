@@ -1,19 +1,27 @@
-import { Button } from "@chakra-ui/react";
+import { Badge, Button, Flex, Image, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styles from "../CSS/Product.module.css";
 import { getProductsData } from "../Redux/AppReducer/action";
 import { AiOutlinePlus, AiOutlineMinus, AiTwotoneMail } from "react-icons/ai";
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
+import {BsFillCartFill} from "react-icons/bs"
+
+import { ADD } from "../Redux/AppReducer/action";
 
 const Product = () => {
+ 
+
   const { id } = useParams();
   const products = useSelector((store) => store.AppReducer.products);
   const [currentproduct, setCurrentproduct] = useState({});
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
 
+
+
+  
   const myproducts = [
     {
       id: 22,
@@ -53,6 +61,7 @@ const Product = () => {
     },
   ];
 
+ 
   const handleplus = () => {
     setCount(count + 1);
   };
@@ -77,10 +86,22 @@ const Product = () => {
     }
   }, [id, products]);
 
-  console.log(currentproduct);
+  // console.log(currentproduct);
+
+  const getdata = useSelector((state)=> state.cartreducer.carts);
+  // console.log(getdata);
+
+
+  const send=(currentproduct)=>{
+    // console.log(currentproduct)
+    dispatch(ADD(currentproduct))
+  }
+ 
 
   return (
     <div>
+ 
+      
       <div className={styles.lightblue}>
         <p>
           {" "}
@@ -171,13 +192,15 @@ const Product = () => {
                 >
                   <AiOutlinePlus />
                 </Button>{" "}
-                <button
+                <button   onClick={()=> send(currentproduct)}
                   style={{
                     backgroundColor: "rgb(51,51,51)",
                     height: "40px",
                     color: "white",
                     width: "200px",
                   }}
+
+                  
                 >
                   Add to Cart
                 </button>
@@ -195,7 +218,7 @@ const Product = () => {
       <div className={styles.customersviewed}>
         {myproducts.map((el) => {
           return (
-            <div>
+            <div key={el.id}>
               <div>
                 <img
                   className={styles.imgcustom}
@@ -205,8 +228,10 @@ const Product = () => {
                 <h1>{el.name}</h1>
                 <p>{el.category}</p>
                 <h1>{`$${el.price}`}</h1>
-                <button className={styles.custombtn}>Add to Cart</button>
+
+                <button className={styles.custombtn} >Add to Cart</button>
               </div>
+            
             </div>
           );
         })}

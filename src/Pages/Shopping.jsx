@@ -1,7 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useParams, useSearchParams } from "react-router-dom";
 import styles from "../CSS/Shopping.module.css";
 import { getProductsData } from "../Redux/AppReducer/action";
 
@@ -16,6 +16,11 @@ const Shopping = () => {
   const location = useLocation();
   const initialSortParams = searchParams.get("sortBy");
   const [sortBy, setSortBy] = useState(initialSortParams || "");
+//  console.log(products)
+
+
+
+ 
 
   useEffect(() => {
     if (category || sortBy) {
@@ -55,7 +60,8 @@ const Shopping = () => {
   const handleSort = (e) => {
     setSortBy(e.target.value);
   };
-
+  
+  
   return (
     <Flex color="white">
       <Box className={styles.flexbox1} flex="1">
