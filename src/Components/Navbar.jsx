@@ -8,9 +8,7 @@ import {
   Avatar,
   Tabs,
   TabList,
-  TabPanels,
-  Tab,
-  TabPanel} from "@chakra-ui/react";
+  Tab} from "@chakra-ui/react";
 import { useRef } from "react";
 import { Search2Icon } from "@chakra-ui/icons";
 export const Navbar = () => {
