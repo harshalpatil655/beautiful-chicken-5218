@@ -12,11 +12,15 @@ import {
   Tab,
   TabPanel,
 } from "@chakra-ui/react";
+import { useRef } from "react";
 // import { Search2Icon } from "@chakra-ui/icons";
 
 export const Navbar = () => {
+  const ref = useRef()
   return (
     <>
+    <div ref={ref} style={{width:"100px"}}></div>
+    <Box  position={"sticky"} top="0" width={"100%"} background="white">
       <Box marginTop={"10px"}>
         <Flex>
           <Image
@@ -39,6 +43,7 @@ export const Navbar = () => {
             size="md"
             marginLeft={"10px"}
             marginTop="-5px"
+            background={"blue"}
           />
 
           <Image
@@ -66,6 +71,7 @@ export const Navbar = () => {
           </Flex>
           <hr />
         </Tabs>
+      </Box>
       </Box>
     </>
   );
