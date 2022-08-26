@@ -10,11 +10,9 @@ import {
   TabList,
   TabPanels,
   Tab,
-  TabPanel,
-} from "@chakra-ui/react";
+  TabPanel} from "@chakra-ui/react";
 import { useRef } from "react";
-// import { Search2Icon } from "@chakra-ui/icons";
-
+import { Search2Icon } from "@chakra-ui/icons";
 export const Navbar = () => {
   const ref = useRef()
   return (
@@ -35,7 +33,7 @@ export const Navbar = () => {
               focusBorderColor="grey.500"
               placeholder={"Search by fragrance or Product..."}
             />
-            {/* <InputRightElement children={<Search2Icon color="blue.300" />} /> */}
+            <InputRightElement children={<Search2Icon color="blue.300" />} />
           </InputGroup>
           <Avatar
             cursor={"pointer"}

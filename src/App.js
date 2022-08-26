@@ -9,6 +9,7 @@ function App() {
     <div className="App">
       <Navbar />
       <MainRoute />
+      <hr />
      <Footer />
     </div>
   );
