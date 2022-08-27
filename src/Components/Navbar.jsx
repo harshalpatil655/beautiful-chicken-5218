@@ -23,6 +23,10 @@ export const Navbar = () => {
 
   const navigate = useNavigate();
 
+  const handlehome = () => {
+    navigate("/");
+  };
+
   const handleShopping = () => {
     navigate("/shopping");
   };
@@ -32,13 +36,14 @@ export const Navbar = () => {
       <Box marginTop={"10px"}>
         <Flex>
           <Image
+            onClick={handlehome}
             margin={"0px 50px 0px 33%"}
             height={"34px"}
             width={"340px"}
             src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dwd76d640f/images/svg-icons/Logos-main.svg?yocs=o_s_"
           />
 
-          <InputGroup width={"300px"} outlineColor="grey">
+          <InputGroup width={"200px"} outlineColor="grey">
             <Input
               borderRadius={"0px"}
               focusBorderColor="grey.500"
@@ -46,19 +51,21 @@ export const Navbar = () => {
             />
             {/* <InputRightElement children={<Search2Icon color="blue.300" />} /> */}
           </InputGroup>
-          <Avatar
-            cursor={"pointer"}
-            src="https://bit.ly/broken-link"
-            size="md"
-            marginLeft={"10px"}
-            marginTop="-5px"
-          />
+          <Link to="/login">
+            <Avatar
+              cursor={"pointer"}
+              src="https://bit.ly/broken-link"
+              size="md"
+              marginLeft={"10px"}
+              marginTop="-5px"
+            />
+          </Link>
 
           <Flex alignItems="center" gap="2">
             <Link to="/cart">
               {getdata.length > 0 && <div>{getdata.length}</div>}
 
-              <BsBagCheckFill size={20} />
+              <BsBagCheckFill size={26} />
             </Link>
           </Flex>
         </Flex>
