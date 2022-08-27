@@ -8,94 +8,59 @@ import {
 	Text,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { BsClipboardCheck } from "react-icons/bs";
-import { HiShoppingCart } from "react-icons/hi";
-import { MdOutlinePayment } from "react-icons/md";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { CartItem } from "./CartItem";
 
 const Cart = () => {
-	let cart = JSON.parse(localStorage.getItem("CartData")) || [];
+	const dispatch = useDispatch();
 
+	const getdata = useSelector((state) => state.cartreducer.carts);
+	console.log(getdata);
+	const { id } = useParams();
+	console.log(id);
+	const [price, setPrice] = useState([]);
 	const [state, updateState] = useState();
 	const forceUpdate = React.useCallback(() => updateState({}), []);
 
-	let totalPrice1 = cart.reduce((acc, elem) => {
-		return acc + elem.qty * Math.floor(Number(elem.price2));
-	}, 0);
-
-	let totalPrice2 = cart.reduce((acc, elem) => {
-		return acc + elem.qty * elem.price1;
-	}, 0);
+	const total = () => {
+		let price = 0;
+		getdata.map((ele, k) => {
+			price = ele.price * ele.qnty + price;
+		});
+		setPrice(price);
+	};
+	useEffect(() => {
+		total();
+	}, [total]);
 
 	return (
 		<>
-			<Flex direction="column" backgroundColor="rgb(236,236,237)">
+			<Flex
+				direction="column"
+				backgroundColor="rgb(236,236,237)"
+				justifyContent="space-around"
+			>
 				{/* //parent */}
-				<Flex
-					direction="row"
-					padding="30px 50px"
-					justifyContent="space-between"
-				>
+				<Flex direction="row" padding="30px 50px">
 					<Box>
-						<Heading fontSize="23px">SHOPPING BAG</Heading>
+						<img
+							src="https://www.bathandbodyworks.in/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dw5d45c735/images/BBW-strip.jpg"
+							alt=""
+						/>
 					</Box>
-					{cart.length > 0 && (
-						<Flex>
-							<Box>
-								{" "}
-								<ul style={{ display: "flex", "list-style-type": "none" }}>
-									<li>
-										<HiShoppingCart size="22px" color="rgb(0,142,204)" />
-									</li>
-									<li>
-										<Heading fontSize="13px" fontWeight="90px">
-											My Cart
-										</Heading>
-									</li>
-									<li>
-										<div className="line" />
-									</li>
-									<li>
-										<BsClipboardCheck size="21px" color="rgb(0,142,204)" />
-									</li>
-									<li>
-										<Heading fontSize="13px" fontWeight="90px">
-											Order Summary
-										</Heading>
-									</li>
-									<li>
-										<div className="line" />
-									</li>
-									<li>
-										<MdOutlinePayment size="21px" color="rgb(0,142,204)" />
-									</li>
-									<li>
-										<Heading fontSize="13px" fontWeight="90px">
-											Payment
-										</Heading>
-									</li>
-								</ul>
-							</Box>
-						</Flex>
-					)}
 				</Flex>
 
-				<Flex
-					direction="row"
-					justifyContent="space-between"
-					padding="30px"
-					px="30px"
-				>
-					<Box width="55%" height="600px" overflow="scroll">
+				<Flex direction="row" padding="30px" justifyContent="space-around">
+					<Box width="55%" height="600px">
 						<Box backgroundColor="white" height="auto">
 							<Heading fontSize="23px" padding="30px"></Heading>
 							{/* add to cart will show here */}
-							{cart.length > 0 &&
-								cart.map((e) => {
+							{getdata.length > 0 &&
+								getdata.map((e, id) => {
 									return (
-										<CartItem elem={e} cart={cart} onChange={forceUpdate} />
+										<CartItem elem={e} cart={getdata} onChange={forceUpdate} />
 									);
 								})}
 						</Box>
@@ -123,19 +88,24 @@ const Cart = () => {
 								</Flex>
 							</div>
 
-							<Flex direction="column" backgroundColor="white">
-								{" "}
-								<Heading fontSize="16px" padding="10px" fontWeight="400">
-									SHIPPING METHOD
-								</Heading>
-								<Select
-									placeholder="Standard (Estimated Delivery in 5 to 7 Days"
-									width="90%"
-									marginLeft="3%"
-								></Select>
-							</Flex>
+							<div
+								style={{
+									backgroundColor: "white",
+									padding: "10px",
+									textAlign: "start",
+								}}
+							>
+								<Flex direction="column" backgroundColor="white">
+									{" "}
+									<Heading fontSize="16px" padding="10px" fontWeight="400">
+										SHIPPING METHOD
+									</Heading>
+									<Select
+										placeholder="Standard (Estimated Delivery in 5 to 7 Days"
+										width="90%"
+									></Select>
+								</Flex>
 
-							<div style={{ backgroundColor: "white", padding: "10px" }}>
 								<Text fontSize="15px" padding="10px" fontWeight="400">
 									ORDER DETAILS
 								</Text>
@@ -151,8 +121,8 @@ const Cart = () => {
 									<Text fontSize="15px" fontWeight="90px" padding="10px">
 										Total Mrp
 									</Text>
-									<Text fontSize="15px" fontWeight="bold" padding="10px">
-										₹{totalPrice1}.00
+									<Text fontSize="15px" fontWeight="400" padding="10px">
+										${price}.00
 									</Text>
 								</div>
 								<hr style={{ color: "gray" }} />
@@ -165,10 +135,10 @@ const Cart = () => {
 									<Text
 										color="black"
 										fontSize="15px"
-										fontWeight="bold"
+										fontWeight="400"
 										padding="10px"
 									>
-										₹0.00
+										$0.00
 									</Text>
 								</div>
 								<div
@@ -180,10 +150,10 @@ const Cart = () => {
 									<Text
 										color="black"
 										fontSize="15px"
-										fontWeight="bold"
+										fontWeight="400"
 										padding="10px"
 									>
-										₹{totalPrice1}.00
+										${price}.00
 									</Text>
 								</div>
 								<hr style={{ color: "gray" }} />
@@ -204,15 +174,17 @@ const Cart = () => {
 										fontWeight="bold"
 										padding="10px"
 									>
-										₹{totalPrice1}.00
+										${price}.00
 									</Text>
 								</div>
 							</div>
+
 							<Button
 								colorScheme="blue"
 								variant="solid"
 								width="230px"
 								marginLeft="auto"
+								backgroundColor="black"
 							>
 								<a href="/checkout">CONTINUE CHECKOUT</a>{" "}
 							</Button>
