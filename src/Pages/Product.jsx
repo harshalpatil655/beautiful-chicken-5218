@@ -219,6 +219,7 @@ const Product = () => {
                 <h1>{`$${el.price}`}</h1>
 
                 <button className={styles.custombtn}>Add to Cart</button>
+                <h1>Products Page</h1>
               </div>
             </div>
           );
