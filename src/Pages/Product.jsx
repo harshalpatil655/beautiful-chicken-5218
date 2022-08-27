@@ -1,12 +1,11 @@
-import { Badge, Button, Flex, Image, Text } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "../CSS/Product.module.css";
 import { getProductsData } from "../Redux/AppReducer/action";
 import { AiOutlinePlus, AiOutlineMinus, AiTwotoneMail } from "react-icons/ai";
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
-import { BsFillCartFill } from "react-icons/bs";
 
 import { ADD } from "../Redux/AppReducer/action";
 
@@ -79,11 +78,6 @@ const Product = () => {
       currentproductData && setCurrentproduct(currentproductData);
     }
   }, [id, products]);
-
-  // console.log(currentproduct);
-
-  const getdata = useSelector((state) => state.cartreducer.carts);
-  // console.log(getdata);
 
   const send = (currentproduct) => {
     // console.log(currentproduct)

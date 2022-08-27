@@ -8,14 +8,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 import { CartItem } from "./CartItem";
 
 const Cart = () => {
-  const dispatch = useDispatch();
-
   const getdata = useSelector((state) => state.cartreducer.carts);
   console.log(getdata);
   const { id } = useParams();

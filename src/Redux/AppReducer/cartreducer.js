@@ -6,7 +6,7 @@ const INIT_STATE = {
 
 export const cartreducer = (state = INIT_STATE, action) => {
   switch (action.type) {
-    case "ADD_CART": {
+    case "ADD_CART":
       const IteamIndex = state.carts.findIndex(
         (iteam) => iteam.id === action.payload.id
       );
@@ -24,9 +24,8 @@ export const cartreducer = (state = INIT_STATE, action) => {
           carts: [...state.carts, temp],
         };
       }
-    }
 
-    case "RMV_CART": {
+    case "RMV_CART":
       const data = state.carts.filter((el) => el.id !== action.payload);
       // console.log(data);
 
@@ -34,9 +33,8 @@ export const cartreducer = (state = INIT_STATE, action) => {
         ...state,
         carts: data,
       };
-    }
 
-    case "RMV_ONE": {
+    case "RMV_ONE":
       const IteamIndex_dec = state.carts.findIndex(
         (iteam) => iteam.id === action.payload.id
       );
@@ -57,10 +55,8 @@ export const cartreducer = (state = INIT_STATE, action) => {
           carts: data,
         };
       }
-    }
 
-    default: {
+    default:
       return state;
-    }
   }
 };
