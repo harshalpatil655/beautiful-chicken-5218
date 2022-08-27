@@ -120,8 +120,8 @@ const Shopping = () => {
           {products.length > 0 &&
             products.map((item) => {
               return (
-                <Link to={`/product/${item.id}`}>
-                  <div className={styles.griddiv} key={item.id}>
+                <div className={styles.griddiv} key={item.id}>
+                  <Link to={`/product/${item.id}`}>
                     <div className={styles.productgrid}>
                       <img
                         className={styles.shoppingimg}
@@ -140,8 +140,8 @@ const Shopping = () => {
                         Add to Cart
                       </button>
                     </div>
-                  </div>
-                </Link>
+                  </Link>
+                </div>
               );
             })}
         </div>

@@ -8,13 +8,11 @@ import {
   Tabs,
   TabList,
   Tab,
-  Text,
 } from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
-import { BsFillCartFill } from "react-icons/bs";
+import { useSelector } from "react-redux";
+
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
-import { IconName } from "react-icons/bs";
+
 // import { Search2Icon } from "@chakra-ui/icons";
 import { BsBagCheckFill } from "react-icons/bs";
 
@@ -23,7 +21,6 @@ export const Navbar = () => {
 
   // console.log(data);
 
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleShopping = () => {
@@ -40,7 +37,8 @@ export const Navbar = () => {
             width={"340px"}
             src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/on/demandware.static/Sites-BathAndBodyWorks-Site/-/default/dwd76d640f/images/svg-icons/Logos-main.svg?yocs=o_s_"
           />
-          <InputGroup width={"200px"} outlineColor="grey">
+
+          <InputGroup width={"300px"} outlineColor="grey">
             <Input
               borderRadius={"0px"}
               focusBorderColor="grey.500"
@@ -59,14 +57,7 @@ export const Navbar = () => {
           <Flex alignItems="center" gap="2">
             <Link to="/cart">
               {getdata.length > 0 && <div>{getdata.length}</div>}
-              {/* <Image
-                cursor={"pointer"}
-                marginLeft={"20px"}
-                marginTop="-7px"
-                height={"45px"}
-                width="45px"
-                src="https://image.shutterstock.com/image-vector/shopping-cart-icon-bag-260nw-1520865410.jpg"
-              ></Image> */}
+
               <BsBagCheckFill size={20} />
             </Link>
           </Flex>
@@ -87,6 +78,36 @@ export const Navbar = () => {
               <Tab fontSize={"12px"}>GIFTS</Tab>
             </TabList>
           </Flex>
+        </Tabs>
+
+        <Flex alignItems="center" gap="2">
+          <Link to="/cart">
+            {getdata.length > 0 && <div>{getdata.length}</div>}
+            <Image
+              cursor={"pointer"}
+              marginLeft={"20px"}
+              marginTop="-7px"
+              height={"45px"}
+              width="45px"
+              src="https://image.shutterstock.com/image-vector/shopping-cart-icon-bag-260nw-1520865410.jpg"
+            ></Image>
+          </Link>
+        </Flex>
+      </Box>
+      <Box marginTop={"20px"}>
+        <Tabs justifyContent={"center"} width={"100%"}>
+          <Flex justifyContent={"space-around"}>
+            <TabList fontSize={"10px"}>
+              <Tab fontSize={"12px"}>TOP OFFERS</Tab>
+              <Tab fontSize={"12px"}>BODY CARE</Tab>
+              <Tab fontSize={"12px"}>CANDLES</Tab>
+              <Tab fontSize={"12px"}>HOME FRAGRANCE</Tab>
+              <Tab fontSize={"12px"}>HAND SOAPS SANITIZERS</Tab>
+              <Tab fontSize={"12px"}>MEN'S</Tab>
+              <Tab fontSize={"12px"}>GIFTS</Tab>
+            </TabList>
+          </Flex>
+
           <hr />
         </Tabs>
       </Box>
