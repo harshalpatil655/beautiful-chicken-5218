@@ -1,6 +1,10 @@
 import { Box, Button, Flex, Image, Input, Text } from "@chakra-ui/react";
 import React, { useReducer } from "react";
 import { PasswordInput } from "./PasswordInput";
+import { account } from "../Redux/AuthReducer/action";
+import * as types from "../Redux/AuthReducer/actiontypes"
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -18,10 +22,7 @@ import {
 const initialState = {
     name: "",
     email: "",
-    password: "",
-    username: "",
-    mobile: "",
-    description: "" 
+    password: ""
 }
 
 const reducer = (state=initialState,{type,payload})=>{
@@ -33,20 +34,26 @@ const reducer = (state=initialState,{type,payload})=>{
       return {...state,email:payload}
     case "password":
       return {...state,password:payload}
-    case "mobile":
-      return {...state,mobile:payload}
-    case "username":
-      return {...state,username:payload}
-  }
 } 
+}
 
-const Account = () => {
+export const Account = () => {
 
   const [state, setState] = useReducer(reducer,initialState)
-  console.log(state)
+
+  const dispatch = useDispatch()
+
+  const navigate = useNavigate()
 
   const handleSubmit = ()=>{
-    
+    dispatch(account(state)).then((r)=>{
+        if(r===types.CREATE_ACCOUNT_FAILURE){
+          navigate("/",{replace:true})
+        }
+    }).catch((r)=>{
+      console.log("here")
+      console.log(r)
+    })
   }
   return (
     <Box width="100%" height={"100vh"}>
@@ -92,7 +99,7 @@ const Account = () => {
           <FormLabel>First name</FormLabel>
           <Input onChange={(e)=>setState({type:"name",payload:e.target.value})}></Input>
           <FormLabel>Last name</FormLabel>
-          <Input onChange={(e)=>setState({type:"username",payload:e.target.value})}></Input>
+          <Input></Input>
           <FormLabel>Email</FormLabel>
           <Input onChange={(e)=>setState({type:"email",payload:e.target.value})}></Input>
           <FormLabel>Confirm Email</FormLabel>
@@ -100,7 +107,7 @@ const Account = () => {
           <FormLabel>ZIP/Postal Code</FormLabel>
           <Input></Input>
           <FormLabel>Phone</FormLabel>
-          <Input onChange={(e)=>setState({type:"mobile",payload:e.target.value})}></Input>
+          <Input></Input>
           <FormLabel>Password</FormLabel>
           <Input onChange={(e)=>setState({type:"password",payload:e.target.value})}></Input>
         </FormControl>
@@ -122,5 +129,3 @@ const Account = () => {
     </Box>
   );
 };
-
-export default Account;

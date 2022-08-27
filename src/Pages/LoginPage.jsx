@@ -8,7 +8,7 @@ import {
   Spacer,
   Text,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { PasswordInput } from "./PasswordInput";
 import {
   Breadcrumb,
@@ -16,10 +16,39 @@ import {
   BreadcrumbLink,
   BreadcrumbSeparator,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { Checkbox, CheckboxGroup } from "@chakra-ui/react";
+import { login } from "../Redux/AuthReducer/action";
+import { useDispatch } from "react-redux";
+
+import * as types from "../Redux/AuthReducer/actiontypes"
 
 const LoginPage = () => {
+
+  const [email,setEmail] = useState("")
+  const [password,setPassowrd] = useState("")
+
+  console.log(email,password)
+
+  const dispatch = useDispatch()
+  const navigate= useNavigate()
+
+  const handleSubmit = ()=>{
+    var payload ={
+      email:email,
+      password:password
+    }
+    dispatch(login(payload)).then((r)=>{
+      console.log(r)
+        if(r===types.LOGIN_FAILURE){
+          navigate("/",{replace:true})
+        }
+    })
+  }
+
+  const handlechange = (text)=>{
+    setPassowrd(text)
+  }
   return (
     <Box width="100%" height={"100vh"}>
       <Box width="100%" height={"80px"}></Box>
@@ -77,9 +106,9 @@ const LoginPage = () => {
             <Text textAlign="start" mt="10px">
               Email Adress
             </Text>
-            <Input />
+            <Input onChange={(e)=>setEmail(e.target.value)} />
             <Text textAlign="start">Password</Text>
-            <PasswordInput />
+            <PasswordInput onchange={handlechange} />
 
             <HStack mt="40px">
               <Box>
@@ -97,6 +126,8 @@ const LoginPage = () => {
               color="#FFFFFF"
               fontSize="11px"
               padding="0px 30.9375px"
+
+              onClick={handleSubmit}
             >
               SIGN IN
             </Button>

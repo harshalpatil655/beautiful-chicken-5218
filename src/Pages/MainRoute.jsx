@@ -5,7 +5,7 @@ import { HomePage } from "./HomePage";
 import LoginPage from "./LoginPage";
 import Product from "./Product";
 import Shopping from "./Shopping";
-import CreateAccount from "./CreateAccount";
+import {Account} from "./CreateAccount";
 
 const MainRoute = () => {
   return (
@@ -16,7 +16,7 @@ const MainRoute = () => {
         <Route path="shopping/:id" element={<Product />} />
         <Route path="/Cart" element={<Cart />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/login/singup" element={<CreateAccount />} />
+        <Route path="/login/singup" element={<Account />} />
       </Routes>
     </div>
   );
