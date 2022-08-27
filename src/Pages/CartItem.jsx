@@ -1,238 +1,225 @@
 import React, { forwardRef, useEffect, useState } from "react";
 import {
-	Box,
-	Button,
-	Flex,
-	Heading,
-	Image,
-	Stack,
-	Text,
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
 } from "@chakra-ui/react";
-import { BsWindowSidebar } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { DLT } from "../Redux/AppReducer/action";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { REMOVE } from "../Redux/AppReducer/action";
+import { ADD } from "../Redux/AppReducer/action";
 
 export const CartItem = ({ elem, cart, onChange }) => {
-	const navigate = useNavigate();
+  const { id } = useParams();
 
-	const [quantity, setQuantity] = useState(0);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-	const [currentElement] = useState(() => {
-		return cart.find((el) => el.id === elem.id && setQuantity(el.qty));
-	});
+  const getdata = useSelector((state) => state.cartreducer.carts);
+  console.log(getdata);
 
-	const deleteItem = (index) => {
-		cart.splice(index, 1);
-		localStorage.setItem("CartData", JSON.stringify(cart));
-		cart = JSON.parse(localStorage.getItem("CartData")) || [];
-		window.location.reload();
-	};
+  const [quantity, setQuantity] = useState(1);
+  console.log(quantity);
 
-	useEffect(() => {
-		cart = JSON.parse(localStorage.getItem("CartData")) || [];
-	}, [deleteItem]);
+  const [data, setData] = useState([]);
 
-	useEffect(() => {
-		if (quantity <= 0) {
-			cart?.find((item, index) => item.id === elem.id && deleteItem(index));
-		}
-		onChange();
-	}, [quantity]);
+  const compare = () => {
+    let comparedata = getdata.filter((e) => {
+      return e.id == id;
+    });
+    setData(comparedata);
+  };
+  const send = (e) => {
+    // console.log(e);
+    dispatch(ADD(e));
+  };
 
-	const increment = () => {
-		cart.find(
-			(item) => item.id === elem.id && item.qty++ && setQuantity(item.qty)
-		);
-		localStorage.setItem("CartData", JSON.stringify(cart));
-	};
+  const remove = (item) => {
+    dispatch(REMOVE(item));
+  };
 
-	const decrement = () => {
-		cart.find(
-			(item) =>
-				item.id === elem.id &&
-				item.qty > 0 &&
-				item.qty-- &&
-				setQuantity(item.qty)
-		);
-		localStorage.setItem("CartData", JSON.stringify(cart));
-	};
-	const goToDetailPage = () => {
-		navigate(`/product/${elem.category}/${elem.name}/${elem.id}`);
-	};
+  const dlt = (id) => {
+    dispatch(DLT(id));
+  };
+  useEffect(() => {
+    compare();
+  }, [id]);
 
-	return (
-		<Flex
-			direction={{
-				base: "column",
-				md: "row",
-			}}
-			justify="space-between"
-			align="center"
-		>
-			<Stack direction="row" spacing="5" width="full" height="200px">
-				<Image
-					rounded="lg"
-					width="250px"
-					height="150PX"
-					fit="cover"
-					src={elem.image}
-					alt=""
-					draggable="false"
-					loading="lazy"
-				/>
+  return (
+    <Flex
+      direction={{
+        base: "column",
+        md: "row",
+      }}
+      justify="space-between"
+      align="center"
+    >
+      <Stack direction="row" spacing="5" width="full" height="200px">
+        <Image
+          rounded="lg"
+          width="230px"
+          height="130PX"
+          fit="cover"
+          src={elem.image}
+          alt=""
+          draggable="false"
+          loading="lazy"
+        />
 
-				<Box>
-					<Stack spacing="0.5">
-						<Text fontWeight="medium" onClick={goToDetailPage}>
-							{elem.name}
-						</Text>
-						<Text color="green" fontSize="sm">
-							In Stock
-						</Text>
-					</Stack>
+        <Box>
+          <Stack spacing="1.5">
+            <Text fontWeight="medium">{elem.name}</Text>
+            <Text color="green" fontSize="sm">
+              In Stock
+            </Text>
 
-					<div style={{ display: "flex" }}>
-						<div
-							style={{ display: "flex", justifyContent: "right", gap: "10px" }}
-						>
-							<div
-								style={{
-									justifyContent: "center",
-									textAlign: "center",
-									fontSize: "25px",
-									cursor: "pointer",
-									backgroundColor: "rgb(0,142,204)",
-									height: "40px",
-									width: "40px",
-									color: "white",
-									borderRadius: "50%",
-								}}
-								onClick={decrement}
-							>
-								-
-							</div>
-							<div style={{ height: "30px", width: "35px", fontSize: "20px" }}>
-								{quantity}
-							</div>
-							<div
-								style={{
-									marginLeft: "-15px",
-									justifyContent: "center",
-									textAlign: "center",
-									fontSize: "25px",
-									cursor: "pointer",
-									backgroundColor: "rgb(0,142,204)",
-									height: "40px",
-									width: "40px",
-									color: "white",
-									borderRadius: "50%",
-								}}
-								onClick={increment}
-							>
-								+
-							</div>
-						</div>
-					</div>
+            <div style={{ display: "flex" }}>
+              <div style={{ display: "flex", gap: "5px" }}>
+                <div
+                  style={{
+                    marginLeft: "5px",
+                    fontSize: "25px",
+                    cursor: "pointer",
+                    backgroundColor: "black",
+                    height: "29px",
+                    width: "30px",
+                    color: "white",
+                  }}
+                  onClick={
+                    elem.qnty <= 1 ? () => dlt(elem.id) : () => remove(elem)
+                  }
+                >
+                  -
+                </div>
+                <div
+                  style={{ height: "30px", width: "35px", fontSize: "20px" }}
+                >
+                  {elem.qnty}
+                </div>
+                <div
+                  style={{
+                    marginLeft: "-15px",
+                    fontSize: "25px",
+                    cursor: "pointer",
+                    backgroundColor: "black",
+                    height: "30px",
+                    width: "30px",
+                    color: "white",
+                  }}
+                  onClick={() => send(elem)}
+                >
+                  +
+                </div>
+              </div>
+            </div>
 
-					<Button
-						width="100px"
-						height="20px"
-						backgroundColor="white"
-						color="blue"
-						borderRadius="0PX"
-						fontSize="sm"
-					>
-						Remove
-					</Button>
-				</Box>
+            <Button
+              width="100px"
+              height="20px"
+              backgroundColor="white"
+              color="blue"
+              borderRadius="0PX"
+              fontSize="sm"
+              onClick={() => dlt(elem.id)}
+            >
+              Remove
+            </Button>
+          </Stack>
+        </Box>
 
-				<Box direction="column" width="full">
-					<Box width="full">
-						<Flex
-							width="full"
-							justify="space-evenly"
-							display={{
-								base: "none",
-								md: "flex",
-							}}
-						>
-							<Heading fontSize="1.5xl" fontWeight="bold" color="#333333">
-								EACH ITEM
-							</Heading>
-							<Heading fontSize="1.5xl" fontWeight="bold" color="#333333">
-								TOTAL PRICE
-							</Heading>
-						</Flex>
-					</Box>
-					<Box width="full">
-						<Flex
-							width="full"
-							justify="space-evenly"
-							display={{
-								base: "none",
-								md: "flex",
-							}}
-						>
-							<Heading fontSize="10px" padding="15px">
-								₹ {elem.price1 * elem.qty}.00
-							</Heading>
-							<Heading fontSize="14px" padding="15px">
-								₹ {elem.price1 * elem.qty}.00
-							</Heading>
-						</Flex>
-					</Box>
-				</Box>
-			</Stack>
+        <Box direction="column" width="full">
+          <Box width="full">
+            <Flex
+              width="full"
+              justify="space-evenly"
+              display={{
+                base: "none",
+                md: "flex",
+              }}
+            >
+              <Heading fontSize="1.5xl" fontWeight="500" color="#333333">
+                EACH ITEM
+              </Heading>
+              <Heading fontSize="1.5xl" fontWeight="500" color="#333333">
+                TOTAL PRICE
+              </Heading>
+            </Flex>
+          </Box>
+          <Box width="full">
+            <Flex
+              width="full"
+              justify="space-evenly"
+              display={{
+                base: "none",
+                md: "flex",
+              }}
+            >
+              <Heading fontSize="13px" padding="15px" fontWeight="400">
+                $ {elem.price}.00
+              </Heading>
+              <Heading fontSize="16px" padding="15px" fontWeight="400">
+                $ {elem.price * elem.qnty}.00
+              </Heading>
+            </Flex>
+          </Box>
+        </Box>
+      </Stack>
 
-			<Box
-				width="full"
-				display={{
-					base: "flex",
-					md: "none",
-				}}
-			>
-				<Flex
-					mt="4"
-					align="center"
-					width="full"
-					justify="space-between"
-					display={{
-						base: "flex",
-						md: "none",
-					}}
-				>
-					<Heading fontSize="1.5xl" fontWeight="bold" color="#333333">
-						EACH ITEM
-					</Heading>
-					<Heading fontSize="1.5xl" fontWeight="bold" color="#333333">
-						TOTAL PRICE
-					</Heading>
-				</Flex>
-			</Box>
-			<Box
-				width="full"
-				display={{
-					base: "flex",
-					md: "none",
-				}}
-			>
-				<Flex
-					mt="4"
-					align="center"
-					width="full"
-					justify="space-between"
-					display={{
-						base: "flex",
-						md: "none",
-					}}
-				>
-					<Heading fontSize="10px" padding="15px">
-						₹ {elem.price1 * elem.qty}.00
-					</Heading>
-					<Heading fontSize="14px" padding="15px">
-						₹ {elem.price1 * elem.qty}.00
-					</Heading>
-				</Flex>
-			</Box>
-		</Flex>
-	);
+      <Box
+        width="full"
+        display={{
+          base: "flex",
+          md: "none",
+        }}
+      >
+        <Flex
+          mt="4"
+          align="center"
+          width="full"
+          justify="space-between"
+          display={{
+            base: "flex",
+            md: "none",
+          }}
+        >
+          <Heading fontSize="1.5xl" fontWeight="500" color="#333333">
+            EACH ITEM
+          </Heading>
+          <Heading fontSize="1.5xl" fontWeight="500" color="#333333">
+            TOTAL PRICE
+          </Heading>
+        </Flex>
+      </Box>
+      <Box
+        width="full"
+        display={{
+          base: "flex",
+          md: "none",
+        }}
+      >
+        <Flex
+          mt="4"
+          align="center"
+          width="full"
+          justify="space-between"
+          display={{
+            base: "flex",
+            md: "none",
+          }}
+        >
+          <Heading fontSize="13px" padding="15px">
+            $ {elem.price}.00
+          </Heading>
+          <Heading fontSize="14px" padding="15px">
+            $ {elem.price * elem.qnty}.00
+          </Heading>
+        </Flex>
+      </Box>
+    </Flex>
+  );
 };
