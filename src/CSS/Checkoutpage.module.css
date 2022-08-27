@@ -1,0 +1,20 @@
+.container {
+  margin: 5rem;
+  background-color: rgb(210, 228, 244);
+}
+.details {
+  width: 500px;
+  border-top: 1px solid black;
+  margin: 3rem;
+}
+
+.checklabel {
+  text-align: start;
+}
+.delivery {
+  display: flex;
+  width: 800px;
+  margin-right: 20px;
+  background-color: rgb(251, 240, 240);
+  margin: 5rem;
+}

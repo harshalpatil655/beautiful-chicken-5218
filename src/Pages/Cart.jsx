@@ -23,6 +23,11 @@ const Cart = () => {
   const [price, setPrice] = useState([]);
   const [state, updateState] = useState();
   const forceUpdate = React.useCallback(() => updateState({}), []);
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    navigate("/checkoutpage");
+  };
 
   const total = () => {
     let price = 0;
@@ -180,13 +185,14 @@ const Cart = () => {
               </div>
 
               <Button
+                onClick={handleCheckout}
                 colorScheme="blue"
                 variant="solid"
                 width="230px"
                 marginLeft="auto"
                 backgroundColor="black"
               >
-                <a href="/checkout">CONTINUE CHECKOUT</a>{" "}
+                CONTINUE CHECKOUT
               </Button>
             </Flex>
           </Box>
