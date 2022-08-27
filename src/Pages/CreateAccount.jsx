@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Image, Input, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useReducer } from "react";
 import { PasswordInput } from "./PasswordInput";
 import {
   Breadcrumb,
@@ -14,7 +14,40 @@ import {
   FormHelperText,
 } from "@chakra-ui/react";
 
+
+const initialState = {
+    name: "",
+    email: "",
+    password: "",
+    username: "",
+    mobile: "",
+    description: "" 
+}
+
+const reducer = (state=initialState,{type,payload})=>{
+
+  switch (type){
+    case "name":
+      return {...state,name:payload}
+    case "email":
+      return {...state,email:payload}
+    case "password":
+      return {...state,password:payload}
+    case "mobile":
+      return {...state,mobile:payload}
+    case "username":
+      return {...state,username:payload}
+  }
+} 
+
 const Account = () => {
+
+  const [state, setState] = useReducer(reducer,initialState)
+  console.log(state)
+
+  const handleSubmit = ()=>{
+    
+  }
   return (
     <Box width="100%" height={"100vh"}>
       <Box width="100%" height={"80px"}></Box>
@@ -57,19 +90,19 @@ const Account = () => {
         ></Box>
         <FormControl isRequired width="30rem" margin="auto">
           <FormLabel>First name</FormLabel>
-          <Input></Input>
+          <Input onChange={(e)=>setState({type:"name",payload:e.target.value})}></Input>
           <FormLabel>Last name</FormLabel>
-          <Input></Input>
+          <Input onChange={(e)=>setState({type:"username",payload:e.target.value})}></Input>
           <FormLabel>Email</FormLabel>
-          <Input></Input>
+          <Input onChange={(e)=>setState({type:"email",payload:e.target.value})}></Input>
           <FormLabel>Confirm Email</FormLabel>
-          <Input></Input>
+          <Input onChange={(e)=>setState({type:"email",payload:e.target.value})}></Input>
           <FormLabel>ZIP/Postal Code</FormLabel>
           <Input></Input>
           <FormLabel>Phone</FormLabel>
-          <Input></Input>
+          <Input onChange={(e)=>setState({type:"mobile",payload:e.target.value})}></Input>
           <FormLabel>Password</FormLabel>
-          <Input></Input>
+          <Input onChange={(e)=>setState({type:"password",payload:e.target.value})}></Input>
         </FormControl>
 
         <Button
@@ -78,6 +111,8 @@ const Account = () => {
           color="#FFFFFF"
           fontSize="11px"
           padding="0px 30.9375px"
+
+          onClick={handleSubmit}
         >
           CREATE AN ACCOUNT
         </Button>

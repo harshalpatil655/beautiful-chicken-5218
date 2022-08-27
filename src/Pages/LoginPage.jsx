@@ -18,6 +18,7 @@ import {
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { Checkbox, CheckboxGroup } from "@chakra-ui/react";
+
 const LoginPage = () => {
   return (
     <Box width="100%" height={"100vh"}>
