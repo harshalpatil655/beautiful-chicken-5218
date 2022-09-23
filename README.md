@@ -56,7 +56,6 @@ https://bath-and-body-works-mocha.vercel.app/
 
 - Authentication
 - Login Confirmation
-- Search Functionality
 - Sorting
 - Add To Cart
 - Filtering
