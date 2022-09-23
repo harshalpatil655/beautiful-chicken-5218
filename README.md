@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# [BODY & BATH WORKS](https://github.com/sudhirbhargav/Unit3_construct_week)
+https://bath-and-body-works-mocha.vercel.app/
+<table>
+<tr>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+</tr>
+</table>
 
-## Available Scripts
+## BODY & BATH WORKS CLONE
 
-In the project directory, you can run:
+### Home page by[@Amar Kumar Soni](https://github.com/amar0020)
 
-### `npm start`
+![192013371-73f4ae57-ec14-4a92-9162-ee4b6950d29a](https://user-images.githubusercontent.com/97461362/192026098-a214dd6e-8d8b-421b-995c-f25de2575f12.png)
+ <div style='page-break-after: always'></div>
+ 
+### Product listing page by[@Harshal Patil](https://github.com/harshalpatil655)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![screencapture-bath-and-body-works-mocha-vercel-app-shopping-2022-09-23-22_53_01](https://user-images.githubusercontent.com/97461362/192022947-873c079b-8fd3-4581-bc6f-f3dae1348b3b.png)
 
-### `npm test`
+![Screenshot 2022-09-23 225557](https://user-images.githubusercontent.com/97461362/192023708-4299914d-b5c9-4994-9964-a1826066ee28.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Login page by[@Amar Kumar Soni](https://github.com/amar0020)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![screencapture-bath-and-body-works-mocha-vercel-app-login-2022-09-23-22_59_55](https://user-images.githubusercontent.com/97461362/192024348-5ede9784-eed6-4be2-b18f-c6494891bb19.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div style='page-break-after: always'></div>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Cart page by[@Anusha Surendran](https://github.com/anushaAnu333)
+![screencapture-bath-and-body-works-mocha-vercel-app-cart-2022-09-23-22_58_11](https://user-images.githubusercontent.com/97461362/192024106-69974016-da6f-4027-acc7-ef86d52d0f5b.png)
 
-### `npm run eject`
+<div style='page-break-after: always'></div>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Checkout page by[@Amar Kumar Soni](https://github.com/amar0020)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![screencapture-bath-and-body-works-mocha-vercel-app-checkoutpage-2022-09-23-23_01_27](https://user-images.githubusercontent.com/97461362/192024691-75db6e2a-a9c6-4367-8b28-190cd84cfe55.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<div style='page-break-after: always'></div>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### <u>Technologies</u>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- HTML
+- CSS
+- JavaScript
+- React
+- Redux
+- Chakra UI
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<div style='page-break-after: always'></div>
 
-### Analyzing the Bundle Size
+### <u>Functionalities</u>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Authentication
+- Login Confirmation
+- Search Functionality
+- Sorting
+- Add To Cart
+- Filtering
