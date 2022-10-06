@@ -32,3 +32,70 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+@media (max-width: 1024px) {
+  .navtop {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  .text {
+    font-size: 14px;
+  }
+  .title {
+    width: 200px;
+    margin-left: 18rem;
+  }
+  .navtit {
+    display: flex;
+  }
+  .navinput {
+    margin: 0.5rem;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid gray;
+  }
+  .navlist {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-left: 1rem;
+    font-size: 13px;
+    font-weight: 600;
+    border-top: 1px solid gray;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .navtop {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+  }
+  .text {
+    font-size: 8px;
+  }
+  .title {
+    width: 200px;
+    margin-left: 3.75rem;
+  }
+  .navtit {
+    display: flex;
+  }
+  .navinput {
+    display: none;
+  }
+  .navlist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    align-items: center;
+    padding-left: 1rem;
+    font-size: 8px;
+    font-weight: 600;
+    border-top: 1px solid gray;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
