@@ -1,119 +1,74 @@
+import React from "react";
 import styles from "../CSS/Footer.module.css";
-import {
-  Flex,
-  Box,
-  Text,
-  Input,
-  InputGroup,
-  InputRightElement,
-  Button,
-  Heading,
-  Stack,
-} from "@chakra-ui/react";
-import { FaBeer } from "react-icons/fa";
+import { BsFacebook, BsTwitter, BsInstagram, BsYoutube } from "react-icons/bs";
+import { TiSocialPinterest } from "react-icons/ti";
 
-import { AiFillTwitterCircle, AiFillYoutube } from "react-icons/ai";
-import { BsInstagram, BsFacebook } from "react-icons/bs";
-export const Footer = () => {
+const Footer = () => {
   return (
-    <div className={styles.myfooter} >
-      <Box width={"100%"} marginTop={"40px"}>
-        <Flex justifyContent={"space-around"}>
-          <Box width={"30%"} height="300px">
-            <Box>
-              <Text fontSize={"15px"}>
-                Get email offers & the latest news from Bath & Body Works!
-              </Text>
-              <Text textAlign={"initial"}>Enter Email</Text>
-              <Input borderRadius={"0px"}></Input>
-              <Text textAlign={"initial"} marginTop="20px">
-                Enter Confirm Email
-              </Text>
-              <Input borderRadius={"0px"} width="80%"></Input>
-              <Button
-                width="20%"
-                background={"black"}
-                color="white"
-                borderRadius={"0px"}
-                marginTop="-7px"
-              >
-                Submit
-              </Button>
-            </Box>
-            <Box marginTop="20px">
-              <Heading textAlign={"initial"} fontSize={"sm"}>
-                GET CONNECTED
-              </Heading>
-              <Flex gap={"10px"}>
-                <AiFillTwitterCircle
-                  style={{ height: "30px", width: "30px" }}
-                />
-                <BsInstagram
-                  style={{ height: "30px", width: "30px" }}
-                ></BsInstagram>{" "}
-                <BsFacebook style={{ height: "30px", width: "30px" }} />
-                <AiFillYoutube
-                  style={{ height: "30px", width: "30px" }}
-                ></AiFillYoutube>
-              </Flex>
-            </Box>
-          </Box>
-          <Box width={"15%"} height="300px">
-            <Stack direction="column" gap="10px">
-              <Heading as={"h1"} fontSize="20px" textAlign={"initial"}>
-                Customer Care
-              </Heading>
-              <Text textAlign={"initial"}> Help & FAQs</Text>
-              <Text textAlign={"initial"}> Shipping</Text>
-              <Text textAlign={"initial"}> Returns & Exchanges</Text>
-              <Text textAlign={"initial"}> Order Tracking</Text>
-              <Text textAlign={"initial"}> Corporate Sales & Gifts</Text>
-              <Text textAlign={"initial"}> Contact Us</Text>
-            </Stack>
-          </Box>
-          <Box width={"15%"} height="300px">
-            <Stack direction="column" gap="10px">
-              <Heading textAlign={"initial"} as={"h1"} fontSize="20px">
-                My account
-              </Heading>
-              <Text textAlign={"initial"}> Sign In or Sign Up</Text>
-              <Text textAlign={"initial"}> Order Tracking</Text>
-              <Text textAlign={"initial"}> My Auto Refresh</Text>
-              <Text textAlign={"initial"}> My Love-It List</Text>
-              <Text textAlign={"initial"}> Contact Us</Text>
-            </Stack>
-          </Box>
-          <Box width={"15%"} height="300px">
-            <Stack direction="column" gap="10px">
-              <Heading textAlign={"initial"} as={"h1"} fontSize="20px">
-                Discover
-              </Heading>
-              <Text textAlign={"initial"}> About Us</Text>
-              <Text textAlign={"initial"}> Gift Cards</Text>
-              <Text textAlign={"initial"}> Shop by Fragrance</Text>
-              <Text textAlign={"initial"}> Order Tracking</Text>
-              <Text textAlign={"initial"}> Product Ingredients</Text>
-            </Stack>
-          </Box>
-          <Box width={"15%"} height="300px">
-            <Stack direction="column" gap="10px">
-              <Heading textAlign={"initial"} as={"h1"} fontSize="20px">
-                Find Us
-              </Heading>
-              <Text textAlign={"initial"}> Store Locator</Text>
-              <Text textAlign={"initial"}> Global Locations</Text>
-            </Stack>
-          </Box>
-        </Flex>
-        <img
-          className={styles.myimg}
-          style={{ marginLeft: "68%" }}
-          height={"200px"}
-          width="300px"
-          src="https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.216/on/demandware.static/-/Sites-BathAndBodyWorks-Library/default/dw0c8e6af7/images/evergreen/Happiness_Guaranteedtimes2_v2.jpg?yocs=o_s_"
-          alt=""
-        />
-      </Box>
+    <div className={styles.footer}>
+      <div className={styles.footerflex}>
+        <div className={styles.flexdiv}>
+          <h1 className={styles.fooh1}>CUSTOMER CARE</h1>
+          <p>Help & FAQs</p>
+          <p>Shipping</p>
+          <p>Returns & Exchanges</p>
+          <p>Order Tracking</p>
+          <p>Corporate Sales & Gifts</p>
+          <p>Contact Us</p>
+        </div>
+        <div className={styles.flexdiv}>
+          <h1 className={styles.fooh1}>MY ACCOUNT</h1>
+          <p>Sign In or Sign Up</p>
+          <p>Order Tracking</p>
+          <p>My Auto Refresh</p>
+          <p>My Love-It List</p>
+        </div>
+        <div className={styles.flexdiv}>
+          <h1 className={styles.fooh1}>DISCOVER</h1>
+          <p>About Us</p>
+          <p>Careers</p>
+          <p>Gift Cards</p>
+          <p>Shop by Fragrance</p>
+          <p>Product Ingredients</p>
+          <p>Get Inspired</p>
+          <p>Diversity, Equity & Inclusion</p>
+        </div>
+        <div className={styles.flexdiv}>
+          <h1 className={styles.fooh1}>FIND US</h1>
+          <p>Store Locator</p>
+          <p>Global Locations</p>
+        </div>
+      </div>
+      <div className={styles.logos}>
+        <p style={{ textAlign: "start" }}>Get Connected</p>
+        <div className={styles.logosdiv}>
+          <BsFacebook size={25} />
+          <BsTwitter size={25} />
+          <BsInstagram size={25} />
+          <BsYoutube size={25} />
+          <TiSocialPinterest size={25} />
+        </div>
+      </div>
+      <div>
+        <div className={styles.footerdown}>
+          <p>Terms Of Use</p>
+          <p> Privacy Policy</p>
+          <p> Security Bug Report</p>
+          <p>States Privacy Rights Notice (Certain States)</p>
+          <p> Do Not Sell or Share My Personal Information (Certain States)</p>
+          <p> Transparency in Supply Chains</p>
+          <p>Targeted Ad Preferences (Certain States)</p>
+          <p>
+            {" "}
+            Limit the Use of My Sensitive Personal Information (California)
+          </p>
+        </div>
+        <div className={styles.rights}>
+          <h1>@2022 Bath & Body Works Direct,Inc. All Rights Reserved.</h1>
+        </div>
+      </div>
     </div>
   );
 };
+
+export default Footer;

@@ -1,21 +1,126 @@
-.Footer {
-  height: 200px;
-  width: 100%;
-  background-color: black;
+.footerflex {
+  display: grid;
+  border-top: 1px solid gray;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 10px;
+  margin: 2rem;
+}
+.flexdiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  gap: 3px;
+}
+.fooh1 {
+  font-weight: 600;
+  font-size: 15px;
+}
+.flexdiv > p {
+  font-size: 12px;
+}
+.logos {
+  margin-left: 6rem;
+}
+.logosdiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footerdown {
+  display: flex;
+  font-size: 10px;
+  padding: 2rem;
+  background-color: rgb(211, 211, 211);
+  text-decoration: underline;
+  margin-top: 2rem;
+}
+.rights {
+  background-color: rgb(211, 211, 211);
+  padding: 1rem;
 }
 @media (max-width: 1024px) {
-  .myimg {
-    width: 20px;
+  .footerflex {
+    display: grid;
+    border-top: 1px solid gray;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    margin: 2rem;
   }
-  .myfooter {
-    width: 700px;
+  .flexdiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 3px;
+  }
+  .fooh1 {
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .flexdiv > p {
+    font-size: 12px;
+  }
+  .logos {
+    margin-left: 6rem;
+  }
+  .logosdiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .footerdown {
+    display: flex;
+    font-size: 10px;
+    padding: 2rem;
+    background-color: rgb(211, 211, 211);
+    text-decoration: underline;
+    margin-top: 2rem;
+  }
+  .rights {
+    background-color: rgb(211, 211, 211);
+    padding: 1rem;
   }
 }
 @media (max-width: 480px) {
-  .myimg {
-    width: 20px;
+  .footerflex {
+    display: grid;
+    border-top: 1px solid gray;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 10px;
+    margin: 2rem;
   }
-  .myfooter {
-    width: 400px;
+  .flexdiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 3px;
+  }
+  .fooh1 {
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .flexdiv > p {
+    font-size: 12px;
+  }
+
+  .logosdiv {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .footerdown {
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+    padding: 1rem;
+    background-color: rgb(211, 211, 211);
+    text-decoration: underline;
+    margin-top: 1rem;
+  }
+  .rights {
+    background-color: rgb(211, 211, 211);
+    font-size: 12px;
   }
 }

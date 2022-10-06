@@ -1,7 +1,7 @@
 .bluetop {
   height: 40px;
   width: 100%;
-  background-color: aqua;
+  background-color: #e6f5ff;
 }
 .bluetopp {
   color: blue;
@@ -130,7 +130,7 @@
   .bluetop {
     height: 40px;
     width: 100%;
-    background-color: aqua;
+    background-color: #e6f5ff;
   }
   .bluetopp {
     color: blue;
@@ -259,7 +259,7 @@
   .bluetop {
     height: 40px;
     width: 100%;
-    background-color: aqua;
+    background-color: #e6f5ff;
   }
   .bluetopp {
     color: blue;
@@ -307,16 +307,18 @@
     margin-top: 2rem;
   }
   .cat {
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 600;
     margin-top: 3rem;
   }
   .catflex {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     gap: 10px;
     align-items: center;
+    margin-left: 2rem;
+    margin-bottom: 3rem;
   }
   .catflexdiv {
     display: flex;
@@ -328,7 +330,7 @@
   }
   .shop {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     gap: 25px;
     margin: 5rem;
@@ -339,21 +341,21 @@
     margin-bottom: 1rem;
   }
   .pinkimgdiv {
-    margin: 2rem;
+    margin: 5rem;
   }
   .pinkimg {
-    margin-top: 2rem;
+    margin-top: 3rem;
   }
   .btndowngrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
-    margin: 1rem;
+    margin: 2rem;
   }
   .btndown {
     background-color: #333333;
     color: white;
-    font-size: 10px;
+    font-size: 14px;
     height: 35px;
     font-weight: 600;
   }
@@ -372,9 +374,8 @@
     margin: 4rem;
   }
   .downp {
-    /* margin-left: 4rem; */
     width: 250px;
-    font-size: 10px;
+    font-size: 14px;
     font-weight: 500;
     color: gray;
     margin-bottom: 7rem;

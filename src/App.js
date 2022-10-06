@@ -1,16 +1,18 @@
 import "./App.css";
-import { Navbar } from "./Components/Navbar";
+import Navbar from "./Components/Navbar";
 import MainRoute from "./Pages/MainRoute";
 
-import { Footer } from "./Components/Footer";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
     <div className="App">
-      {/* <Navbar /> */}
+      <Navbar />
       <MainRoute />
-      <hr />
-      <div>{/* <Footer /> */}</div>
+
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
