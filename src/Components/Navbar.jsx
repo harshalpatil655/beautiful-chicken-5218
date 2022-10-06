@@ -10,6 +10,7 @@ import {
   Tab,
 } from "@chakra-ui/react";
 import { useSelector } from "react-redux";
+import styles from "../CSS/Navbar.module.css";
 
 import { Link, useNavigate } from "react-router-dom";
 
@@ -36,6 +37,7 @@ export const Navbar = () => {
       <Box marginTop={"10px"}>
         <Flex>
           <Image
+            className={styles.mytitle}
             onClick={handlehome}
             margin={"0px 50px 0px 33%"}
             height={"34px"}
@@ -45,6 +47,7 @@ export const Navbar = () => {
 
           <InputGroup width={"200px"} outlineColor="grey">
             <Input
+              className={styles.inputtab}
               borderRadius={"0px"}
               focusBorderColor="grey.500"
               placeholder={"Search by fragrance or Product..."}
@@ -53,6 +56,7 @@ export const Navbar = () => {
           </InputGroup>
           <Link to="/login">
             <Avatar
+              className={styles.avatar}
               cursor={"pointer"}
               src="https://bit.ly/broken-link"
               size="md"
@@ -65,7 +69,7 @@ export const Navbar = () => {
             <Link to="/cart">
               {getdata.length > 0 && <div>{getdata.length}</div>}
 
-              <BsBagCheckFill size={26} />
+              <BsBagCheckFill className={styles.mybag} size={26} />
             </Link>
           </Flex>
         </Flex>

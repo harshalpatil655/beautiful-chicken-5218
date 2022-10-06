@@ -46,7 +46,7 @@ export const Account = () => {
     dispatch(account(state))
       .then((r) => {
         if (r === types.CREATE_ACCOUNT_SUCCESS) {
-          navigate("/", { replace: true });
+          navigate("/login", { replace: true });
         }
       })
       .catch((r) => {

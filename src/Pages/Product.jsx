@@ -153,11 +153,7 @@ const Product = () => {
                 <input type="radio" />
                 <label>Ship It</label>
               </div>
-              <div style={{ display: "flex" }}>
-                {" "}
-                <input type="radio" />
-                <label>Pick up in Store</label>
-              </div>
+
               <div style={{ marginTop: "25px", marginBottom: "25px" }}>
                 <Button
                   onClick={handleminus}

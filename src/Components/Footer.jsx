@@ -11,11 +11,12 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { FaBeer } from "react-icons/fa";
+
 import { AiFillTwitterCircle, AiFillYoutube } from "react-icons/ai";
 import { BsInstagram, BsFacebook } from "react-icons/bs";
 export const Footer = () => {
   return (
-    <div>
+    <div className={styles.myfooter} >
       <Box width={"100%"} marginTop={"40px"}>
         <Flex justifyContent={"space-around"}>
           <Box width={"30%"} height="300px">
@@ -105,6 +106,7 @@ export const Footer = () => {
           </Box>
         </Flex>
         <img
+          className={styles.myimg}
           style={{ marginLeft: "68%" }}
           height={"200px"}
           width="300px"

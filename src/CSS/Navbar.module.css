@@ -1,0 +1,26 @@
+.mybag {
+  margin-right: 5rem;
+}
+@media (max-width: 1024px) {
+  .mybag {
+    margin-right: 55px;
+  }
+  .inputtab {
+    display: none;
+  }
+  .avatar {
+    margin-right: 7rem;
+  }
+  .title {
+    height: 10px;
+    width: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .mybag {
+    margin-right: 5rem;
+  }
+  .inputtab {
+    display: none;
+  }
+}

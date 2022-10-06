@@ -1,5 +1,21 @@
-.Footer{
-    height: 200px;
-    width: 100%;
-    background-color: black;
+.Footer {
+  height: 200px;
+  width: 100%;
+  background-color: black;
+}
+@media (max-width: 1024px) {
+  .myimg {
+    width: 20px;
+  }
+  .myfooter {
+    width: 700px;
+  }
+}
+@media (max-width: 480px) {
+  .myimg {
+    width: 20px;
+  }
+  .myfooter {
+    width: 400px;
+  }
 }
