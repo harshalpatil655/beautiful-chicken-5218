@@ -1,10 +1,20 @@
-import { Box, Button, Flex, Image, Input, Text } from "@chakra-ui/react";
+import {
+  Alert,
+  AlertIcon,
+  Box,
+  Button,
+  Flex,
+  Image,
+  Input,
+  Text,
+} from "@chakra-ui/react";
 import React, { useReducer } from "react";
 import { PasswordInput } from "./PasswordInput";
 import { account } from "../Redux/AuthReducer/action";
 import * as types from "../Redux/AuthReducer/actiontypes";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -46,6 +56,7 @@ export const Account = () => {
     dispatch(account(state))
       .then((r) => {
         if (r === types.CREATE_ACCOUNT_SUCCESS) {
+          alert("You have successfully Signup");
           navigate("/login", { replace: true });
         }
       })
