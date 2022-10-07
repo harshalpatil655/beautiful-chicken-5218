@@ -41,7 +41,7 @@ export const cartreducer = (state = INIT_STATE, action) => {
 
       if (state.carts[IteamIndex_dec].qnty >= 1) {
         const dltiteams = (state.carts[IteamIndex_dec].qnty -= 1);
-        console.log([...state.carts, dltiteams]);
+        //console.log([...state.carts, dltiteams]);
 
         return {
           ...state,
