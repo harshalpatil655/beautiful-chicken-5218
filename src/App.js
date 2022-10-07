@@ -4,6 +4,8 @@ import MainRoute from "./Pages/MainRoute";
 
 import Footer from "./Components/Footer";
 
+
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +15,7 @@ function App() {
       <div>
         <Footer />
       </div>
+     
     </div>
   );
 }
