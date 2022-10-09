@@ -79,6 +79,7 @@ export const Account = () => {
     }
     if(!phonenumber(state.mobileNo)){
       alert("Invalid mobile no")
+      return
     }
 
     function phonenumber(phone){
