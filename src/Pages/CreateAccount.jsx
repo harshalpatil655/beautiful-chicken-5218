@@ -66,7 +66,7 @@ export const Account = () => {
     e.preventDefault()
     console.log(state)
 
-    if(state.name==="") return
+    if(state.firstName==="" || state.lastName==="") return
 
     if(state.email!==state.temail){
       alert("Email and confirm email not matched")
