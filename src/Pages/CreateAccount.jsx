@@ -29,17 +29,26 @@ import {
 } from "@chakra-ui/react";
 
 const initialState = {
-  name: "",
+  firstName: "",
+  lastName:"",
   email: "",
+  temail:"",
   password: "",
+  mobileNo:""
 };
 
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case "name":
-      return { ...state, name: payload };
+    case "first_name":
+      return { ...state, firstName: payload };
+    case "last_name":
+      return { ...state, lastName: payload };
     case "email":
       return { ...state, email: payload };
+    case "temail":
+      return { ...state, temail: payload };
+    case "mobileNo":
+      return { ...state, mobileNo: payload };
     case "password":
       return { ...state, password: payload };
   }
@@ -52,8 +61,47 @@ export const Account = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    dispatch(account(state))
+  const handleSubmit = (e) => {
+
+    e.preventDefault()
+    console.log(state)
+
+    if(state.name==="") return
+
+    if(state.email!==state.temail){
+      alert("Email and confirm email not matched")
+      return
+    }
+
+    if(!ValidateEmail(state.email)){
+      alert("Invalid email id")
+      return
+    }
+    if(!phonenumber(state.mobileNo)){
+      alert("Invalid mobile no")
+      return
+    }
+
+    function phonenumber(phone){
+      var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+      if(phone.match(phoneno)) return true
+      else return false;
+    }
+
+    function ValidateEmail(mail) 
+    {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+        {
+          return (true)
+        }
+          return (false)
+    }
+
+    const {firstName,lastName,mobileNo,email,password} = state
+
+    const data = {firstName,lastName,email,password,mobileNo}
+
+    dispatch(account(data))
       .then((r) => {
         if (r === types.CREATE_ACCOUNT_SUCCESS) {
           alert("You have successfully Signup");
@@ -62,7 +110,7 @@ export const Account = () => {
       })
       .catch((r) => {
         console.log("here");
-        console.log(r);
+        // console.log(r);
       });
   };
   return (
@@ -105,19 +153,22 @@ export const Account = () => {
           margin="auto"
           marginTop="10px"
         ></Box>
+        <form action="" onSubmit={handleSubmit}>
         <FormControl isRequired width="30rem" margin="auto">
           <FormLabel>First name</FormLabel>
           <Input
             onChange={(e) =>
-              setState({ type: "name", payload: e.target.value })
+              setState({ type: "first_name", payload: e.target.value })
             }
           ></Input>
           <FormLabel>Last name</FormLabel>
-          <Input></Input>
+          <Input onChange={(e) =>
+              setState({ type: "last_name", payload: e.target.value })
+            }></Input>
           <FormLabel>Email</FormLabel>
           <Input
             onChange={(e) =>
-              setState({ type: "email", payload: e.target.value })
+              setState({ type: "temail", payload: e.target.value })
             }
           ></Input>
           <FormLabel>Confirm Email</FormLabel>
@@ -127,27 +178,34 @@ export const Account = () => {
             }
           ></Input>
           <FormLabel>ZIP/Postal Code</FormLabel>
-          <Input></Input>
+          <Input type={"number"}></Input>
           <FormLabel>Phone</FormLabel>
-          <Input></Input>
+          <Input  onChange={(e) =>
+              setState({ type: "mobileNo", payload: e.target.value })
+            } type={"number"}></Input>
           <FormLabel>Password</FormLabel>
-          <Input
+          <Input type={"password"}
             onChange={(e) =>
               setState({ type: "password", payload: e.target.value })
             }
           ></Input>
         </FormControl>
 
-        <Button
-          marginTop="20px"
-          bgColor="#333333"
-          color="#FFFFFF"
-          fontSize="11px"
-          padding="0px 30.9375px"
-          onClick={handleSubmit}
-        >
-          CREATE AN ACCOUNT
-        </Button>
+        <input type={"submit"} name="CREATE AN ACCOUNT"
+          
+          value="CREATE AN ACCOUNT"
+          style={{
+            marginTop:"20px",
+            backgroundColor:"#333333",
+            color:"#FFFFFF",
+            fontSize:"11px",
+            padding:"0px 30.9375px",
+            height:"40px",
+            borderRadius:"5px"
+          }}
+        />
+        </form>
+       
         <Text>Questions?</Text>
         <Text>We’re here for you! Call us at 1-800-756-5005.</Text>
       </Box>

@@ -33,16 +33,34 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleSubmit = () => {
+
+    if(!ValidateEmail(email)){
+      alert("Invalid email")
+    }
     var payload = {
       email: email,
       password: password,
     };
     dispatch(login(payload)).then((r) => {
       console.log(r);
+      if(r===types.LOGIN_FAILURE){
+        alert("wrong email or password")
+      }
       if (r === types.LOGIN_SUCCESS) {
         navigate("/", { replace: true });
       }
+    }).catch(()=>{
+      alert("wrong email or password")
     });
+
+    function ValidateEmail(mail) 
+    {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+        {
+          return (true)
+        }
+          return (false)
+    }
   };
 
   const handlechange = (text) => {

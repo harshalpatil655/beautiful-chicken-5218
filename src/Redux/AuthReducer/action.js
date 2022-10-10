@@ -3,26 +3,31 @@ import * as types from "./actiontypes";
 import { setLocal } from "../../util/localstorage";
 
 export const account = (payload) => (dispatch) => {
+  console.log("here")
   dispatch({ type: types.CREATE_ACCOUNT_REQUEST });
-  let axiosConfig = {
-    headers: {
-      "Content-Type": "application/json;charset=UTF-8",
-      "Access-Control-Allow-Origin": "*",
-    },
-  };
-  return axios
+  // let axiosConfig = {
+  //   headers: {
+  //     "Content-Type": "application/json;charset=UTF-8",
+  //     "Access-Control-Allow-Origin": "*",
+  //   },
+  // };
+   return axios
     .post(
-      "https://gentle-escarpment-82476.herokuapp.com/register",
-      payload,
-      axiosConfig
-    )
+      "https://cw4tanishq.herokuapp.com/register",payload
+        
+      )
     .then((r) => {
-      dispatch({ type: types.CREATE_ACCOUNT_SUCCESS });
+      
+      if(r.status==200){
+        dispatch({ type: types.CREATE_ACCOUNT_SUCCESS });
+      }
+      
       setLocal();
       return types.CREATE_ACCOUNT_SUCCESS;
     })
     .catch((r) => {
-      return types.CREATE_ACCOUNT_FAILURE;
+      alert("email id exists")
+      return r
     });
 };
 
@@ -36,7 +41,7 @@ export const login = (payload) => (dispatch) => {
   };
   return axios
     .post(
-      "https://gentle-escarpment-82476.herokuapp.com/login",
+      "https://cw4tanishq.herokuapp.com/login",
       payload,
       axiosConfig
     )
