@@ -99,3 +99,11 @@
     padding-bottom: 0.5rem;
   }
 }
+.cart{
+  background-image: url("https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/en_US/v1665827166822/images/svg-icons/UI-AddToBag.svg?yocs=o_s_");
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+
+}
