@@ -32,7 +32,7 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .navtop {
     background-color: #f2f2f2;
     display: flex;
@@ -66,9 +66,32 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
   }
+} */
+
+.cart{
+  background-image: url("https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/en_US/v1665827166822/images/svg-icons/UI-AddToBag.svg?yocs=o_s_");
+  background-repeat: no-repeat;
+  height: 30px;
+  width: 30px;
+  padding: 5px;
+
 }
-@media (max-width: 480px) {
-  .navtop {
+
+.mobnav{
+  display: none;
+}
+.desk{
+  display: block;
+}
+
+.moblist{
+  box-shadow: 5px  #888888;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+@media only screen and (min-width:0px) and (max-width: 480px) {
+  /* .navtop {
     background-color: #f2f2f2;
     display: flex;
     justify-content: space-between;
@@ -97,13 +120,18 @@
     border-top: 1px solid gray;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+  } */
+  .desk{
+    display: none;
   }
+  .mobnav{
+    display: block;
+  }
+  .moblist{
+    box-shadow: 5px  #888888;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
 }
-.cart{
-  background-image: url("https://cdn-fsly.yottaa.net/5d669b394f1bbf7cb77826ae/www.bathandbodyworks.com/v~4b.219/on/demandware.static/Sites-BathAndBodyWorks-Site/-/en_US/v1665827166822/images/svg-icons/UI-AddToBag.svg?yocs=o_s_");
-  background-repeat: no-repeat;
-  height: 30px;
-  width: 30px;
-  padding: 5px;
-
-}
+  
